@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parure Perles & Chaîne Dorée — Collection Nacre</title>
+<meta name="description" content="Parure élégante collier & bracelet, perles nacrées et chaîne dorée plaquée or 18 carats. Livraison en Tunisie."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --gold:#c9a96e;
+    --gold-dark:#9a7c52;
+    --cream:#fdf8f2;
+    --warm:#f5ece0;
+    --brown:#2c1e10;
+    --text:#3a2a1a;
+    --muted:#7a6250;
+    --border:#e0cdb8;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',sans-serif;background:#fff;color:var(--text);min-height:100vh}
+
+  /* NAV */
+  nav{background:#fff;border-bottom:0.5px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+  .nav-brand{font-family:'Playfair Display',serif;font-size:17px;color:var(--brown);letter-spacing:0.02em}
+  .nav-contact{font-size:12px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 14px;border:0.5px solid var(--border);border-radius:20px;transition:all .2s}
+  .nav-contact:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#fdf8f2 0%,#f5e8d8 55%,#ecdcc8 100%);padding:60px 5vw 50px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:80vh}
+  @media(max-width:700px){.hero{grid-template-columns:1fr;padding:40px 6vw 40px;min-height:auto;gap:32px}}
+  .hero-img-wrap{position:relative}
+  .hero-img{width:100%;max-width:420px;border-radius:16px;object-fit:cover;aspect-ratio:1;display:block;box-shadow:0 20px 60px rgba(44,30,16,.12)}
+  .hero-badge{position:absolute;top:16px;left:16px;background:var(--brown);color:#f5e6d3;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;font-weight:500}
+  .hero-tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:14px;font-weight:500}
+  .hero-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);font-weight:400;line-height:1.2;color:var(--brown);margin-bottom:10px}
+  .hero-title em{font-style:italic;color:var(--gold-dark)}
+  .hero-sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px;max-width:400px}
+  .price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:28px}
+  .price-main{font-size:34px;font-weight:500;color:var(--brown)}
+  .price-note{font-size:13px;color:var(--muted)}
+  .cta-group{display:flex;gap:10px;flex-wrap:wrap}
+  .btn-primary{padding:14px 28px;background:var(--brown);color:#f5e6d3;border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.05em;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .2s}
+  .btn-primary:hover{opacity:.85}
+  .btn-wa{padding:14px 22px;background:#25d366;color:#fff;border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:opacity .2s}
+  .btn-wa:hover{opacity:.88}
+  .wa-icon{width:18px;height:18px;fill:#fff}
+  .trust-row{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap}
+  .trust-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+  /* PRODUITS */
+  .section{padding:60px 5vw}
+  .section-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:8px;font-weight:500}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--brown);margin-bottom:36px}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .prod-card{border:0.5px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;transition:border-color .2s,box-shadow .2s;background:#fff}
+  .prod-card:hover{border-color:var(--gold);box-shadow:0 4px 24px rgba(201,169,110,.15)}
+  .prod-card.featured{border-color:var(--gold);border-width:1.5px}
+  .prod-card-top{background:var(--warm);height:140px;display:flex;align-items:center;justify-content:center;font-size:36px;position:relative}
+  .prod-card-top img{width:100%;height:100%;object-fit:cover}
+  .prod-pop{position:absolute;top:10px;right:10px;background:var(--gold);color:#fff;font-size:10px;padding:3px 9px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500}
+  .prod-body{padding:14px}
+  .prod-name{font-size:14px;font-weight:500;color:var(--brown);margin-bottom:3px}
+  .prod-desc{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5}
+  .prod-price{font-size:16px;font-weight:500;color:var(--brown)}
+  .prod-order{margin-top:10px;width:100%;padding:8px;background:var(--brown);color:#f5e6d3;border:none;border-radius:6px;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;cursor:pointer;letter-spacing:0.04em;transition:opacity .2s}
+  .prod-order:hover{opacity:.82}
+
+  /* DETAILS */
+  .details-section{background:var(--cream);padding:60px 5vw}
+  .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  @media(max-width:600px){.details-grid{grid-template-columns:1fr}}
+  .detail-table{width:100%}
+  .detail-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:0.5px solid var(--border);font-size:14px}
+  .detail-row:last-child{border:none}
+  .dk{color:var(--muted)}
+  .dv{font-weight:500;color:var(--brown);text-align:right}
+  .care-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .care-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--muted);line-height:1.5}
+  .care-bullet{width:20px;height:20px;background:var(--gold);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .care-bullet svg{width:10px;height:10px;fill:#fff}
+
+  /* TEMOIGNAGES */
+  .reviews-section{padding:60px 5vw;background:#fff}
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .review-card{background:var(--cream);border-radius:12px;padding:20px;border:0.5px solid var(--border)}
+  .stars{color:var(--gold);font-size:14px;margin-bottom:8px;letter-spacing:2px}
+  .review-text{font-size:13px;color:var(--muted);line-height:1.65;font-style:italic;margin-bottom:12px}
+  .review-author{font-size:12px;font-weight:500;color:var(--brown);letter-spacing:0.04em}
+
+  /* COMMANDE */
+  .order-section{padding:60px 5vw;background:var(--brown)}
+  .order-section .section-label{color:var(--gold)}
+  .order-section .section-title{color:#f5e6d3}
+  .order-form{max-width:520px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  @media(max-width:500px){.form-row{grid-template-columns:1fr}}
+  .form-group{display:flex;flex-direction:column;gap:5px}
+  label{font-size:12px;color:#c4a882;letter-spacing:0.06em;text-transform:uppercase}
+  input,select,textarea{background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.2);border-radius:8px;padding:11px 14px;font-family:'Jost',sans-serif;font-size:14px;color:#f5e6d3;outline:none;transition:border-color .2s;width:100%}
+  input::placeholder,textarea::placeholder{color:rgba(245,230,211,.4)}
+  input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+  select option{background:var(--brown);color:#f5e6d3}
+  textarea{resize:vertical;min-height:80px}
+  .btn-submit{margin-top:20px;padding:15px 36px;background:var(--gold);color:var(--brown);border:none;border-radius:8px;font-family:'Jost',sans-serif;font-size:15px;font-weight:500;cursor:pointer;letter-spacing:0.05em;transition:opacity .2s;width:100%}
+  .btn-submit:hover{opacity:.88}
+  .form-note{font-size:12px;color:#c4a882;margin-top:10px;line-height:1.6}
+
+  /* SUCCESS */
+  .success-box{display:none;background:rgba(255,255,255,.08);border:0.5px solid var(--gold);border-radius:12px;padding:28px;text-align:center;max-width:520px}
+  .success-box.visible{display:block}
+  .success-icon{font-size:36px;margin-bottom:12px}
+  .success-title{font-family:'Playfair Display',serif;font-size:22px;color:#f5e6d3;margin-bottom:8px}
+  .success-text{font-size:14px;color:#c4a882;line-height:1.65}
+
+  /* FOOTER */
+  footer{background:var(--brown);border-top:0.5px solid rgba(255,255,255,.1);padding:24px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap}
+  @media(max-width:500px){footer{flex-direction:column;gap:12px;text-align:center}}
+  .footer-brand{font-family:'Playfair Display',serif;font-size:15px;color:#f5e6d3}
+  .footer-links{display:flex;gap:20px}
+  .footer-link{font-size:12px;color:#c4a882;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase}
+  .footer-link:hover{color:var(--gold)}
+
+  /* ANIMATIONS */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .hero-info>*{animation:fadeUp .7s ease both}
+  .hero-tag{animation-delay:.1s}
+  .hero-title{animation-delay:.2s}
+  .hero-sub{animation-delay:.3s}
+  .price-row{animation-delay:.4s}
+  .cta-group{animation-delay:.5s}
+  .trust-row{animation-delay:.6s}
+
+  /* STICKY WA */
+  .wa-sticky{position:fixed;bottom:22px;right:22px;z-index:200;background:#25d366;color:#fff;border-radius:50px;padding:12px 20px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:opacity .2s}
+  .wa-sticky:hover{opacity:.9}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Collection Nacre</span>
+  <a href="#commander" class="nav-contact">Commander</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img-wrap">
+    <img class="hero-img" src="WhatsApp_Image_2026-03-02_at_14_39_00.jpeg" alt="Parure Perles et Chaîne Dorée" onerror="this.style.background='#f0e8dc'"/>
+    <span class="hero-badge">Bestseller</span>
+  </div>
+  <div class="hero-info">
+    <div class="hero-tag">✦ Collection Exclusive</div>
+    <h1 class="hero-title">Parure Perles<br/>&amp; <em>Chaîne Dorée</em></h1>
+    <p class="hero-sub">Un mariage raffiné entre perles nacrées et chaîne plaquée or 18 carats. Collier &amp; bracelet assortis, pour sublimer chaque tenue avec élégance.</p>
+    <div class="price-row">
+      <span class="price-main">89 TND</span>
+      <span class="price-note">/ parure complète · livraison incluse</span>
+    </div>
+    <div class="cta-group">
+      <a href="#commander" class="btn-primary">Commander maintenant</a>
+      <a href="https://wa.me/21600000000?text=Bonjour%2C%20je%20souhaite%20commander%20la%20Parure%20Perles%20%26%20Cha%C3%AEne%20Dor%C3%A9e%20(89%20TND)" target="_blank" class="btn-wa">
+        <svg class="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="trust-row">
+      <span class="trust-item"><span class="trust-dot"></span>Livraison en Tunisie</span>
+      <span class="trust-item"><span class="trust-dot"></span>Paiement à la livraison</span>
+      <span class="trust-item"><span class="trust-dot"></span>Stock limité</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section class="section">
+  <div class="section-label">Nos produits</div>
+  <div class="section-title">Choisissez votre pièce</div>
+  <div class="products-grid">
+    <div class="prod-card featured">
+      <div class="prod-card-top" style="background:var(--warm)">
+        <img src="WhatsApp_Image_2026-03-02_at_14_39_00.jpeg" alt="Parure complète" onerror="this.style.display='none'"/>
+        <span class="prod-pop">★ Populaire</span>
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">Parure complète</div>
+        <div class="prod-desc">Collier + bracelet assortis</div>
+        <div class="prod-price">89 TND</div>
+        <button class="prod-order" onclick="choisirProduit('Parure complète — 89 TND')">Choisir</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-card-top" style="background:var(--warm);font-size:48px">◯</div>
+      <div class="prod-body">
+        <div class="prod-name">Collier seul</div>
+        <div class="prod-desc">Chaîne box & perles nacrées</div>
+        <div class="prod-price">55 TND</div>
+        <button class="prod-order" onclick="choisirProduit('Collier seul — 55 TND')">Choisir</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-card-top" style="background:var(--warm);font-size:48px">◎</div>
+      <div class="prod-body">
+        <div class="prod-name">Bracelet seul</div>
+        <div class="prod-desc">Ajustable 16–19 cm</div>
+        <div class="prod-price">42 TND</div>
+        <button class="prod-order" onclick="choisirProduit('Bracelet seul — 42 TND')">Choisir</button>
+      </div>
+    </div>
+    <div class="prod-card">
+      <div class="prod-card-top" style="background:var(--warm);font-size:48px">✦</div>
+      <div class="prod-body">
+        <div class="prod-name">Coffret cadeau</div>
+        <div class="prod-desc">Parure + boîte velours</div>
+        <div class="prod-price">99 TND</div>
+        <button class="prod-order" onclick="choisirProduit('Coffret cadeau — 99 TND')">Choisir</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details-section">
+  <div class="details-grid">
+    <div>
+      <div class="section-label">Fiche technique</div>
+      <div class="section-title" style="margin-bottom:20px">Matières &amp; dimensions</div>
+      <table class="detail-table">
+        <tr class="detail-row"><td class="dk">Matière chaîne</td><td class="dv">Acier inox plaqué or 18K</td></tr>
+        <tr class="detail-row"><td class="dk">Perles</td><td class="dv">Nacrées, 6 mm</td></tr>
+        <tr class="detail-row"><td class="dk">Longueur collier</td><td class="dv">40 – 45 cm</td></tr>
+        <tr class="detail-row"><td class="dk">Longueur bracelet</td><td class="dv">16 – 19 cm</td></tr>
+        <tr class="detail-row"><td class="dk">Fermeture</td><td class="dv">Mousqueton doré</td></tr>
+        <tr class="detail-row"><td class="dk">Couleur</td><td class="dv">Blanc nacré / Or</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="section-label">Entretien</div>
+      <div class="section-title" style="margin-bottom:20px">Conseils de soin</div>
+      <ul class="care-list">
+        <li class="care-item">
+          <span class="care-bullet"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+          Éviter le contact avec l'eau, la mer et la piscine
+        </li>
+        <li class="care-item">
+          <span class="care-bullet"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+          Éloigner des parfums et produits cosmétiques
+        </li>
+        <li class="care-item">
+          <span class="care-bullet"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+          Ranger dans la pochette fournie après usage
+        </li>
+        <li class="care-item">
+          <span class="care-bullet"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></span>
+          Essuyer doucement avec un chiffon doux si besoin
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="reviews-section">
+  <div class="section-label">Avis clients</div>
+  <div class="section-title">Ce qu'elles en disent</div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">« Magnifique parure, exactement comme sur les photos. Je l'ai portée à un mariage et j'ai eu tellement de compliments ! »</p>
+      <div class="review-author">Sana M. — Tunis</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">« Très bonne qualité pour le prix, la chaîne est solide et les perles sont belles. La livraison était rapide. »</p>
+      <div class="review-author">Imen B. — Sfax</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">« Je l'ai offert en cadeau et elle a adoré. La boîte velours est super élégante, parfait pour un cadeau. »</p>
+      <div class="review-author">Rania K. — Sousse</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMANDE -->
+<section class="order-section" id="commander">
+  <div class="section-label">Commander</div>
+  <div class="section-title">Votre commande</div>
+
+  <div class="order-form" id="order-form-wrap">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" placeholder="Votre prénom"/>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" placeholder="Votre nom"/>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:14px">
+      <label for="tel">Numéro de téléphone</label>
+      <input type="tel" id="tel" placeholder="+216 XX XXX XXX"/>
+    </div>
+    <div class="form-group" style="margin-bottom:14px">
+      <label for="adresse">Adresse de livraison</label>
+      <input type="text" id="adresse" placeholder="Rue, ville, gouvernorat"/>
+    </div>
+    <div class="form-group" style="margin-bottom:14px">
+      <label for="produit">Produit souhaité</label>
+      <select id="produit">
+        <option value="Parure complète — 89 TND">Parure complète — 89 TND</option>
+        <option value="Collier seul — 55 TND">Collier seul — 55 TND</option>
+        <option value="Bracelet seul — 42 TND">Bracelet seul — 42 TND</option>
+        <option value="Coffret cadeau — 99 TND">Coffret cadeau (parure + boîte velours) — 99 TND</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="note">Note (optionnel)</label>
+      <textarea id="note" placeholder="Cadeau ? Couleur préférée ? Message spécial..."></textarea>
+    </div>
+    <button class="btn-submit" onclick="soumettre()">Envoyer la commande via WhatsApp</button>
+    <p class="form-note">✦ Paiement à la livraison · Livraison sous 2–4 jours ouvrables · Stock limité</p>
+  </div>
+
+  <div class="success-box" id="success-box">
+    <div class="success-icon">✦</div>
+    <div class="success-title">Commande envoyée !</div>
+    <p class="success-text">Merci pour votre commande. Vous allez être redirigée vers WhatsApp pour confirmer avec nous. Nous vous contacterons dans les plus brefs délais.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Collection Nacre</span>
+  <div class="footer-links">
+    <a href="#commander" class="footer-link">Commander</a>
+    <a href="https://wa.me/21600000000" target="_blank" class="footer-link">WhatsApp</a>
+  </div>
+</footer>
+
+<!-- STICKY WA -->
+<a href="https://wa.me/21600000000?text=Bonjour%2C%20je%20veux%20commander%20la%20Parure%20Perles%20%26%20Cha%C3%AEne%20Dor%C3%A9e" target="_blank" class="wa-sticky">
+  <svg style="width:18px;height:18px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Commander par WhatsApp
+</a>
+
+<script>
+function choisirProduit(val){
+  document.getElementById('produit').value=val;
+  document.getElementById('commander').scrollIntoView({behavior:'smooth'});
+}
+function soumettre(){
+  const p=document.getElementById('prenom').value.trim();
+  const n=document.getElementById('nom').value.trim();
+  const t=document.getElementById('tel').value.trim();
+  const a=document.getElementById('adresse').value.trim();
+  const pr=document.getElementById('produit').value;
+  const note=document.getElementById('note').value.trim();
+  if(!p||!t||!a){alert('Merci de remplir votre prénom, téléphone et adresse.');return;}
+  const msg=`Bonjour ! Je souhaite passer une commande :\n\n👤 Nom : ${p} ${n}\n📞 Tél : ${t}\n📍 Adresse : ${a}\n🛍️ Produit : ${pr}${note?'\n💬 Note : '+note:''}\n\nMerci !`;
+  const url='https://wa.me/21600000000?text='+encodeURIComponent(msg);
+  document.getElementById('order-form-wrap').style.display='none';
+  document.getElementById('success-box').classList.add('visible');
+  setTimeout(()=>window.open(url,'_blank'),800);
+}
+</script>
+</body>
+</html>
